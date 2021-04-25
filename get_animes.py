@@ -3,12 +3,13 @@ import requests
 import json
 import pprint
 import time
+import config
 import pandas as pd
 from tqdm import tqdm
 
 url = "https://api.myanimelist.net/v2/anime/"
 # params = {'fields': ['id', 'title', 'genres', 'media_type', 'num_episodes', 'mean', 'num_list_users', 'start_date', 'start_season', 'source']}
-ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiNjdjOGM5MGFhNDdmMWY5MDdmYTQ1NmZkODM1NGFiYzIwMWZhOTdiNzc2MzFiNDAxOTVmMGVkODc0YWU0MzJhNmZhOWU2NTNjMWUwM2QxIn0.eyJhdWQiOiJkYzk5NDVjYjgyZjRhMzg5MTI0N2Y2ZWZiNDlkMWQ5MiIsImp0aSI6IjhiNjdjOGM5MGFhNDdmMWY5MDdmYTQ1NmZkODM1NGFiYzIwMWZhOTdiNzc2MzFiNDAxOTVmMGVkODc0YWU0MzJhNmZhOWU2NTNjMWUwM2QxIiwiaWF0IjoxNjE5MTY2MjYwLCJuYmYiOjE2MTkxNjYyNjAsImV4cCI6MTYyMTc1ODI2MCwic3ViIjoiMTI2NDQzMjkiLCJzY29wZXMiOltdfQ.FoqEib7N4munklhA0tvv3rP-x5DUb-knRYR0eap44D4qAzUW4WaBNQCR8TWCiLijkpdWPRNFaUsskG7JeBgFMxv-CBUXi6qL70drxumk-9MxzA4tJ4V2B3uwXjoOtcvo8ZdxXl5CCYBQPzeuTabQwgYZLApIPOjUQBA0xxTqpKg-hRM9h3u11h9NClEiwg2Hi4mEpUaSXS3ZwVW2Wq3gXU-F_IedCOFUYAdt2IrT7zq5_RAUiAO0Y1Fln9YWV1KqfAHVBNWLipZe5SKJCY9eyXto8a_W5pRcwBB_4vXzUmwJd4dKwZ31HFuR8SmXmM5n-FAOvl8v1uvOXSfnxuMoDQ'
+ACCESS_TOKEN = config.ACCESS_TOKEN
 params = {'fields': 'id, title, genres, media_type, num_episodes, mean, num_list_users, start_date, start_season, source'}
 headers = {}
 headers['Authorization'] = 'Bearer ' + ACCESS_TOKEN
